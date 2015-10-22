@@ -1,5 +1,7 @@
 package tk.astris.main;
 
+import java.io.File;
+
 import tk.astris.data.TileNames;
 import tk.astris.fileManager.Images;
 import tk.astris.player.Player;
@@ -11,6 +13,11 @@ public class Main {
 	public static Player player;
 	public static Images images;
 	
+	public static int tileSize = 32;
+	
+	public static File saveGame = new File(System.getProperty("user.home") + "/weco/savegametest.lvl");;//TODO: Add savegame
+	public static File saveGame2 = new File(System.getProperty("user.home") + "/weco/savegametest.lvl");;//TODO: Add savegame
+
 	
 	private int fps;
 	private long timeThen;
@@ -56,6 +63,9 @@ public class Main {
 	
 	
 	public static void main(String args[]) {
+		
+		System.out.println("Savegame: " + saveGame);
+		
 		images = new Images();
 		TileNames.put();
 		player = new Player();
@@ -66,6 +76,7 @@ public class Main {
 		
 		Main timer = new Main(60);
 		while (true) {
+			frame.update();
 			timer.sync();
 		}
 		

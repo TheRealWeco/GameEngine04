@@ -10,5 +10,7 @@ public class Tile {
 	public BufferedImage img;
 	public String name;
 	public int id = 0;
+	public boolean canBeGenerated = false;
+	
 	
 }
